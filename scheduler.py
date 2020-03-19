@@ -29,7 +29,7 @@ def compute_dates():
         review_dates_4,
         review_dates_5,
         review_dates_6,
-        review_dates_7
+        review_dates_7,
     )
 
 
@@ -58,11 +58,7 @@ def combine(
 
 
 def make_list_view(
-    review_dates_1_3,
-    review_dates_4,
-    review_dates_5,
-    review_dates_6,
-    review_dates_7,
+    review_dates_1_3, review_dates_4, review_dates_5, review_dates_6, review_dates_7,
 ):
     """
     Generate a text file of review dates in list view
@@ -109,7 +105,7 @@ def make_date_view(total):
 
     delta = end_date - current_date
     days_num = delta.days + 1
-    print(days_num)
+    print(f"You plan will last {days_num} days.")
 
     while current_date != (end_date + timedelta(days=1)):  # loop the range of all dates
         day = current_date.strftime("%Y/%-m/%-d")  # current date
@@ -134,18 +130,20 @@ def plan(list_num):
     """
     (review_1_3, review_4, review_5, review_6, review_7) = compute_dates()
     make_list_view(review_1_3, review_4, review_5, review_6, review_7)
-    schedule = combine(
-        list_num, review_1_3, review_4, review_5, review_6, review_7
-    )
+    schedule = combine(list_num, review_1_3, review_4, review_5, review_6, review_7)
     make_date_view(schedule)
 
 
 if __name__ == "__main__":
     # Prompts
     input_list_num = int(input("Number of vocabulary lists:\n"))
+    print()
     input_start_year = int(input("Start year:\n"))
+    print()
     input_start_mon = int(input("Start month:\n"))
+    print()
     input_start_day = int(input("Start day:\n"))
+    print()
 
     # Constants
     LIST_NUM = input_list_num  # number of all vocabulary lists
