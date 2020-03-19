@@ -143,7 +143,6 @@ if __name__ == "__main__":
     input_start_mon = int(input("Start month:\n"))
     print()
     input_start_day = int(input("Start day:\n"))
-    print()
 
     # Constants
     LIST_NUM = input_list_num  # number of all vocabulary lists
