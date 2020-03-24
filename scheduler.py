@@ -115,10 +115,10 @@ def make_date_view(total):
                 ind = i.index(day)
                 if ind == 1:
                     learn_count += 100
-                    file.write(f"List {total.index(i) + 1}" + " review 1-3\n")
+                    file.write(f"List {total.index(i) + 1}" + " review 1\n")
                 else:
                     review_count += 100
-                    file.write(f"List {total.index(i) + 1}" + f" review {ind + 2}\n")
+                    file.write(f"List {total.index(i) + 1}" + f" review {ind}\n")
 
         current_date += timedelta(days=1)
         file.write("\n")
