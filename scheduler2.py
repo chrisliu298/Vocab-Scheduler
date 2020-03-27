@@ -65,11 +65,11 @@ def switch_date_view(unit_view, naming):
     cols = [
         "Date",
         "Review 1 (three times)",
-        "Review 2",
-        "Review 3",
-        "Review 4",
-        "Review 5",
-        "Review 6",
+        "Review 2 (4th pass)",
+        "Review 3 (5th pass)",
+        "Review 4 (6th pass)",
+        "Review 5 (7th pass)",
+        "Review 6 (8th pass)",
     ]
     # Write to csv file
     with open(filename + ".csv", "w+") as file:
