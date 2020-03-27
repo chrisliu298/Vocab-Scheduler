@@ -31,12 +31,6 @@ def get_unique_dates(unit_view):
     return sorted(set(unique_dates))
 
 
-def auto_populate(full_len, date_view_dict):
-    """
-    """
-    return
-
-
 def switch_date_view(unit_view, naming):
     """
     Switch to the date view
