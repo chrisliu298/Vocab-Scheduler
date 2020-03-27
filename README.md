@@ -1,4 +1,4 @@
-# GRE-Vocab-Scheduler
+# GRE-Vocab-Scheduler 0.2
 
 [中文版](README.zh-cn.md)
 
