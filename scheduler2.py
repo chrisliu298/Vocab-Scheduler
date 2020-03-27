@@ -77,12 +77,15 @@ def beautify_csv(filename, full_len):
     lines = [i.split(", ") for i in file]
     for i in lines:
         while len(i) <= full_len:
-            i.append(", ")
+            i.append(" ")
         print(i)
     new_file = open(filename, "w+")
     for i in lines:
         for j in i:
-            new_file.write(f"{j}")
+            if j == ",":
+                new_file.write(f"{j} ")
+            else:
+                new_file.write(f"{j}, ")
         new_file.write("\n")
     new_file.close()
 
