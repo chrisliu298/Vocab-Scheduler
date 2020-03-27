@@ -91,7 +91,7 @@ def switch_date_view(unit_view, naming):
     return date_view_dict
 
 
-if __name__ == "__main__":
+def main():
     # Prompts
     num_units = int(sys.argv[1])
     start_date = datetime(int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4]))
@@ -101,3 +101,6 @@ if __name__ == "__main__":
     unit_view = make_unit_view(num_units, start_date)
     # Make a dictionary of date:units pair
     date_view = switch_date_view(unit_view, naming)
+
+if __name__ == "__main__":
+    main()
