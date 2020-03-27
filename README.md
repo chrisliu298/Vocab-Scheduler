@@ -10,6 +10,12 @@ Note: The schedule will make you go through all vocabularies for 6 passes, but a
 
 ![Example .csv file](example.jpg)
 
+## Prerequisite
+
+```
+pandas==1.0.3
+```
+
 ## Usage
 
 ```
