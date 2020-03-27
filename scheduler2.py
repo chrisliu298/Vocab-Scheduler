@@ -66,11 +66,17 @@ def switch_date_view(unit_view, naming):
             date_view_dict[date] = units + ["N/A"] * (6 - len(units))
         elif units[0][-2] != "1" and len(units) < 6:
             date_view_dict[date] = ["N/A"] * (6 - len(units)) + units
-    #print(date_view_dict)
-    filename = (
-        f"date_view_{naming[0]}{naming[4]}(s)_{naming[2]}_{naming[3]}_{naming[1]}"
-    )
-    cols = ["Date", "Review 1", "Review 2", "Review 3", "Review 4", "Review 5", "Review 6"]
+    # print(date_view_dict)
+    filename = f"date_view_{naming[0]}{naming[4].lower()}(s)_{naming[2]}_{naming[3]}_{naming[1]}"
+    cols = [
+        "Date",
+        "Review 1",
+        "Review 2",
+        "Review 3",
+        "Review 4",
+        "Review 5",
+        "Review 6",
+    ]
     # Write to csv file
     with open(filename + ".csv", "w+") as file:
         for i in cols:
@@ -83,26 +89,7 @@ def switch_date_view(unit_view, naming):
                 file.write(f"{unit}, ")
             file.write("\n")
     file.close()
-    # pd.read_csv(filename + ".csv").to_excel(filename + "xlsx", index=None, header=False)
     return date_view_dict
-
-
-def beautify_csv(filename, full_len):
-    file = open(filename, "r").readlines()
-    file = map(lambda s: s.strip(), file)
-    lines = [i.split(", ") for i in file]
-    for i in lines:
-        while len(i) <= full_len:
-            i.append(" ")
-    new_file = open(filename, "w+")
-    for i in lines:
-        for j in i:
-            if j == ",":
-                new_file.write(f"{j} ")
-            else:
-                new_file.write(f"{j}, ")
-        new_file.write("\n")
-    new_file.close()
 
 
 if __name__ == "__main__":
@@ -115,7 +102,3 @@ if __name__ == "__main__":
     unit_view = make_unit_view(num_units, start_date)
     # Make a dictionary of date:units pair
     date_view = switch_date_view(unit_view, naming)
-    # beautify_csv(
-    #     f"date_view_{naming[0]}{naming[4]}(s)_{naming[2]}_{naming[3]}_{naming[1]}.csv",
-    #     6,
-    # )
