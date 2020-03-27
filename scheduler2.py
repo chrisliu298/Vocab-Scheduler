@@ -81,7 +81,7 @@ def beautify_csv(filename, full_len):
     new_file = open(filename, "w+")
     for i in lines:
         for j in i:
-            new_file.write(f"{j}, ")
+            new_file.write(f"{j}")
         new_file.write("\n")
     new_file.close()
 
