@@ -70,7 +70,7 @@ def switch_date_view(unit_view, naming):
     filename = (
         f"date_view_{naming[0]}{naming[4]}(s)_{naming[2]}_{naming[3]}_{naming[1]}"
     )
-    cols = ["Date", "Review 1", "Review 2", "Review 3", "Review 4", "Review 5", "Review 6", ""]
+    cols = ["Date", "Review 1", "Review 2", "Review 3", "Review 4", "Review 5", "Review 6"]
     # Write to csv file
     with open(filename + ".csv", "w+") as file:
         for i in cols:
