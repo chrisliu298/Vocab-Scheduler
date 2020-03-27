@@ -55,7 +55,6 @@ def switch_date_view(unit_view, naming):
     date_view_dict = {
         k: v for k, v in sorted(date_view_dict.items(), key=lambda item: item[0][-2:])
     }
-    date_view_dict_full = {}
     for date, units in date_view_dict.items():
         units.sort(key=lambda x: x[-2])
         if len(units) == 6:
@@ -65,7 +64,9 @@ def switch_date_view(unit_view, naming):
         elif units[0][-2] != "1" and len(units) < 6:
             date_view_dict[date] = ["N/A"] * (6 - len(units)) + units
     # print(date_view_dict)
-    filename = f"date_view_{naming[0]}{naming[4].lower()}(s)_{naming[2]}_{naming[3]}_{naming[1]}"
+    filename = (
+        f"date_view_{naming[0]}{naming[4].lower()}(s)_{naming[2]}_{naming[3]}_{naming[1]}"
+    )
     cols = [
         "Date",
         "Review 1 (three times)",
