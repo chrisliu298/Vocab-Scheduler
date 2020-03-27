@@ -73,6 +73,7 @@ def switch_date_view(unit_view, naming):
 
 def beautify_csv(filename, full_len):
     file = open(filename, "r").readlines()
+    file = map(lambda s: s.strip(), file)
     lines = [i.split(", ") for i in file]
     for i in lines:
         while len(i) <= full_len:
