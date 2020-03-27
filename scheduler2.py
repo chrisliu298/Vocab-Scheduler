@@ -54,7 +54,10 @@ def switch_date_view(unit_view, naming):
             if pair[2] == date:
                 date_view_dict[date].append(f"{naming[4]} {pair[0]} (Review {pair[1]})")
                 ind_dates_pairs.remove(pair)
-    # date_view_dict = auto_populate(6, date_view_dict)
+    date_view_dict = {
+        k: v for k, v in sorted(date_view_dict.items(), key=lambda item: item[0][-2:])
+    }
+    # print(date_view_dict)
     filename = f"date_view_{naming[0]}units_{naming[2]}_{naming[3]}_{naming[1]}"
     with open(filename + ".csv", "w+") as file:
         for date, units in date_view_dict.items():
@@ -78,7 +81,6 @@ def beautify_csv(filename, full_len):
     for i in lines:
         while len(i) <= full_len:
             i.append(" ")
-        print(i)
     new_file = open(filename, "w+")
     for i in lines:
         for j in i:
