@@ -57,13 +57,23 @@ def switch_date_view(unit_view, naming):
     date_view_dict = {
         k: v for k, v in sorted(date_view_dict.items(), key=lambda item: item[0][-2:])
     }
-    # print(date_view_dict)
+    date_view_dict_full = {}
+    for date, units in date_view_dict.items():
+        units.sort(key=lambda x: x[-2])
+        if len(units) == 6:
+            continue
+        elif units[0][-2] == "1" and len(units) < 6:
+            date_view_dict[date] = units + ["N/A"] * (6 - len(units))
+        elif units[0][-2] != "1" and len(units) < 6:
+            date_view_dict[date] = ["N/A"] * (6 - len(units)) + units
+    #print(date_view_dict)
     filename = (
         f"date_view_{naming[0]}{naming[4]}(s)_{naming[2]}_{naming[3]}_{naming[1]}"
     )
+    # Write to csv file
     with open(filename + ".csv", "w+") as file:
         for date, units in date_view_dict.items():
-            units.sort(key=lambda x: x[-2])
+            # units.sort(key=lambda x: x[-2])
             file.write(f"{date}, ")
             for unit in units:
                 if units.index(unit) == len(units) - 1:
@@ -104,7 +114,7 @@ if __name__ == "__main__":
     unit_view = make_unit_view(num_units, start_date)
     # Make a dictionary of date:units pair
     date_view = switch_date_view(unit_view, naming)
-    beautify_csv(
-        f"date_view_{naming[0]}{naming[4]}(s)_{naming[2]}_{naming[3]}_{naming[1]}.csv",
-        6,
-    )
+    # beautify_csv(
+    #     f"date_view_{naming[0]}{naming[4]}(s)_{naming[2]}_{naming[3]}_{naming[1]}.csv",
+    #     6,
+    # )
