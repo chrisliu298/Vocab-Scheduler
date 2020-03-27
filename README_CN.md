@@ -1,0 +1,15 @@
+# GRE-Vocab-Scheduler
+
+[English](README.md)
+
+## 开始
+
+在 scheduler 0.2 中，我重新设计并重写了整个程序，它现在使用更少的代码，并增加了额外的功能。scheduler 0.2 会读取命令行参数并创建一个 `.csv`文件，这个文件中包含了你的任务安排（基于 Ebbinghaus 遗忘曲线），并请使用 Microsoft Excel 打开它。
+
+## 使用方法
+
+```
+❯ python3 scheduler2.py 6 2020 3 26 Unit
+```
+
+参数：`python3 scheduler2.py 任务单位数量 起始年份 起始月份 起始日 自定义任务名称`
