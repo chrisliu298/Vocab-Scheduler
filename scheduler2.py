@@ -46,10 +46,7 @@ def switch_date_view(unit_view, naming):
     for date in unique_dates:
         for pair in ind_dates_pairs:
             if pair[2] == date:
-                if pair[1] == 0:
-                    date_view_dict[date].append(f"{naming[4]} {pair[0]} (Review 1-3)")
-                else:
-                    date_view_dict[date].append(f"{naming[4]} {pair[0]} (Review {pair[1] + 2})")
+                date_view_dict[date].append(f"{naming[4]} {pair[0]} (Review {pair[1]})")
                 ind_dates_pairs.remove(pair)
     date_view_dict = {
         k: v for k, v in sorted(date_view_dict.items(), key=lambda item: item[0][-2:])
@@ -67,12 +64,12 @@ def switch_date_view(unit_view, naming):
     filename = f"date_view_{naming[0]}{naming[4].lower()}(s)_{naming[2]}_{naming[3]}_{naming[1]}"
     cols = [
         "Date",
-        "Review 1-3",
+        "Review 1 (three times)",
+        "Review 2",
+        "Review 3",
         "Review 4",
         "Review 5",
         "Review 6",
-        "Review 7",
-        "Review 8",
     ]
     # Write to csv file
     with open(filename + ".csv", "w+") as file:
