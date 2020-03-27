@@ -76,10 +76,7 @@ def switch_date_view(unit_view, naming):
             # units.sort(key=lambda x: x[-2])
             file.write(f"{date}, ")
             for unit in units:
-                if units.index(unit) == len(units) - 1:
-                    file.write(f"{unit}")
-                else:
-                    file.write(f"{unit}, ")
+                file.write(f"{unit}, ")
             file.write("\n")
     file.close()
     # pd.read_csv(filename + ".csv").to_excel(filename + "xlsx", index=None, header=False)
