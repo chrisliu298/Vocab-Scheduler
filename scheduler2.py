@@ -71,6 +71,21 @@ def switch_date_view(unit_view, naming):
     return date_view_dict
 
 
+def beautify_csv(filename, full_len):
+    file = open(filename, "r").readlines()
+    lines = [i.split(", ") for i in file]
+    for i in lines:
+        while len(i) <= full_len:
+            i.append(", ")
+        print(i)
+    new_file = open(filename, "w+")
+    for i in lines:
+        for j in i:
+            new_file.write(f"{j}, ")
+        new_file.write("\n")
+    new_file.close()
+
+
 if __name__ == "__main__":
     # Prompts
     num_units = int(sys.argv[1])
@@ -81,3 +96,4 @@ if __name__ == "__main__":
     unit_view = make_unit_view(num_units, start_date)
     # Make a dictionary of date:units pair
     date_view = switch_date_view(unit_view, naming)
+    beautify_csv("date_view_31units_3_26_2020.csv", 6)
