@@ -1,6 +1,6 @@
 # GRE-Vocab-Scheduler
 
-[中文版](README_CN.md)
+[中文版](README.zh-cn.md)
 
 ## Getting Started
 
