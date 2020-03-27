@@ -17,6 +17,7 @@ def get_unit_dates(start_date):
 
 def make_unit_view(num_units, start):
     """
+    Make a unit view of the task
     """
     unit_view = {}
     for unit in range(num_units):
@@ -25,6 +26,9 @@ def make_unit_view(num_units, start):
 
 
 def get_unique_dates(unit_view):
+    """
+    Returns all unique task dates
+    """
     unique_dates = []
     for unit in unit_view.items():
         unique_dates += unit[1]
