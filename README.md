@@ -8,7 +8,7 @@ In Scheduler 0.2, I redesigned and rewrote the whole program from scratch by wri
 
 Note: The schedule will make you go through all vocabularies for 6 passes, but also remember to review a particular list (unit of task) twice on the first day. So when you finally accomplished everything on the scheduler, you did it 8 passes.  
 
-[Example .csv file](example.jpg)
+![Example .csv file](example.jpg)
 
 ## Usage
 
