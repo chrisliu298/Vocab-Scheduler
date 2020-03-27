@@ -30,10 +30,12 @@ def get_unique_dates(unit_view):
         unique_dates += unit[1]
     return sorted(set(unique_dates))
 
+
 def auto_populate(full_len, date_view_dict):
     """
     """
     return
+
 
 def switch_date_view(unit_view, naming):
     """
@@ -65,7 +67,7 @@ def switch_date_view(unit_view, naming):
                     file.write(f"{unit}, ")
             file.write("\n")
     file.close()
-    #pd.read_csv(filename + ".csv").to_excel(filename + "xlsx", index=None, header=False)
+    # pd.read_csv(filename + ".csv").to_excel(filename + "xlsx", index=None, header=False)
     return date_view_dict
 
 
