@@ -52,7 +52,7 @@ def switch_date_view(unit_view, naming):
     for date in unique_dates:
         for pair in ind_dates_pairs:
             if pair[2] == date:
-                date_view_dict[date].append(f"Unit {pair[0]} ({pair[1]})")
+                date_view_dict[date].append(f"{naming[4]} {pair[0]} ({pair[1]})")
                 ind_dates_pairs.remove(pair)
     # date_view_dict = auto_populate(6, date_view_dict)
     filename = f"date_view_{naming[0]}units_{naming[2]}_{naming[3]}_{naming[1]}"
@@ -75,7 +75,7 @@ if __name__ == "__main__":
     # Prompts
     num_units = int(sys.argv[1])
     start_date = datetime(int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4]))
-    naming = [sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]]
+    naming = [sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5]]
 
     # Make a dictionary of unit:dates pair
     unit_view = make_unit_view(num_units, start_date)
