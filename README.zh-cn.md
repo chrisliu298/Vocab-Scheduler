@@ -1,4 +1,4 @@
-# GRE-Vocab-Scheduler 0.2
+# Vocab-Scheduler 0.2
 
 [English](README.md)
 
