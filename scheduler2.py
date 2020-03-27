@@ -59,31 +59,17 @@ def switch_date_view(unit_view, naming):
     with open(filename + ".csv", "w+") as file:
         for date, units in date_view_dict.items():
             units.sort(key=lambda x: x[-2])
-            file.write(f"{date} ")
+            file.write(f"{date}, ")
             for unit in units:
                 if units.index(unit) == len(units) - 1:
                     file.write(f"{unit}")
                 else:
-                    file.write(f"{unit} ")
+                    file.write(f"{unit}, ")
             file.write("\n")
     file.close()
     # pd.read_csv(filename + ".csv").to_excel(filename + "xlsx", index=None, header=False)
     return date_view_dict
 
-
-def beautify_csv(filename, full_len):
-    file = open(filename, "r").readlines()
-    lines = [i.split() for i in file]
-    for i in lines:
-        while len(i) <= full_len:
-            i.append(" ")
-        print(i)
-    new_file = open(filename, "w+")
-    for i in lines:
-        for j in i:
-            new_file.write(f"{j}, ")
-        new_file.write("\n")
-    new_file.close()
 
 if __name__ == "__main__":
     # Prompts
@@ -95,5 +81,3 @@ if __name__ == "__main__":
     unit_view = make_unit_view(num_units, start_date)
     # Make a dictionary of date:units pair
     date_view = switch_date_view(unit_view, naming)
-    beautify_csv("date_view_31units_3_26_2020.csv", 6)
-
