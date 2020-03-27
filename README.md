@@ -8,7 +8,7 @@ In Scheduler 0.2, I redesigned and rewrote the whole program from scratch by wri
 
 Note: The schedule will make you go through all vocabularies for 6 passes, but also remember to review a particular list (unit of task) twice on the first day. So when you finally accomplished everything on the scheduler, you did it 8 passes.  
 
-[This](date_view_31lists(s)_3_27_2020.csv) is an example of a 31-list-vocabulary test starting March 27, 2020.
+[This](date_view_31lists(s)_3_27_2020.csv) is an example of a 31-list-vocabulary task starting March 27, 2020.
 
 ## Prerequisite
 
