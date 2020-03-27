@@ -58,7 +58,9 @@ def switch_date_view(unit_view, naming):
         k: v for k, v in sorted(date_view_dict.items(), key=lambda item: item[0][-2:])
     }
     # print(date_view_dict)
-    filename = f"date_view_{naming[0]}units_{naming[2]}_{naming[3]}_{naming[1]}"
+    filename = (
+        f"date_view_{naming[0]}{naming[4]}(s)_{naming[2]}_{naming[3]}_{naming[1]}"
+    )
     with open(filename + ".csv", "w+") as file:
         for date, units in date_view_dict.items():
             units.sort(key=lambda x: x[-2])
@@ -102,4 +104,7 @@ if __name__ == "__main__":
     unit_view = make_unit_view(num_units, start_date)
     # Make a dictionary of date:units pair
     date_view = switch_date_view(unit_view, naming)
-    beautify_csv("date_view_31units_3_26_2020.csv", 6)
+    beautify_csv(
+        f"date_view_{naming[0]}{naming[4]}(s)_{naming[2]}_{naming[3]}_{naming[1]}.csv",
+        6,
+    )
