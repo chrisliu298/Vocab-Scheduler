@@ -6,6 +6,8 @@
 
 In Scheduler 0.2, I redesigned and rewrote the whole program from scratch by writing much less code and adding extra functionalities. The scheduler 0.2 reads the command arguments as input (detail below) and creates your schedule (based on Ebbinghaus forgetting curve) in a `.csv` file (open with Microsoft Excel).
 
+Note: The schedule will make you go through all vocabularies for 6 passes, but also remember to review a particular list (unit of task) twice on the first day. So when you finally accomplished everything on the scheduler, you did it 8 passes.  
+
 ## Usage
 
 ```

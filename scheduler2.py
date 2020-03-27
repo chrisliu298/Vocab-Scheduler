@@ -52,7 +52,7 @@ def switch_date_view(unit_view, naming):
     for date in unique_dates:
         for pair in ind_dates_pairs:
             if pair[2] == date:
-                date_view_dict[date].append(f"{naming[4]} {pair[0]} ({pair[1]})")
+                date_view_dict[date].append(f"{naming[4]} {pair[0]} (Review {pair[1]})")
                 ind_dates_pairs.remove(pair)
     # date_view_dict = auto_populate(6, date_view_dict)
     filename = f"date_view_{naming[0]}units_{naming[2]}_{naming[3]}_{naming[1]}"
