@@ -13,7 +13,7 @@ Note: The schedule will make you go through all vocabularies for 6 passes, but a
 ## Prerequisite
 
 ```
-pandas==1.0.3
+pip3 install pandas
 ```
 
 ## Usage

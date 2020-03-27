@@ -13,7 +13,7 @@
 ## 安装
 
 ```
-pandas==1.0.3
+pip3 install pandas
 ```
 
 ## 使用方法
