@@ -65,7 +65,7 @@ def switch_date_view(unit_view, naming):
         elif units[0][-2] != "1" and len(units) < 6:
             date_view_dict[date] = ["N/A"] * (6 - len(units)) + units
     # print(date_view_dict)
-    filename = f"date_view_{naming[0]}{naming[4].lower()}_{naming[2]}_{naming[3]}_{naming[1]}"
+    filename = f"date_view_{naming[0]}{naming[4].lower()}(s)_{naming[2]}_{naming[3]}_{naming[1]}"
     cols = [
         "Date",
         "Review 1 (three times)",
