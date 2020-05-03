@@ -1,4 +1,5 @@
 import sys
+import argparse
 import os
 import pandas as pd
 from datetime import datetime, timedelta
@@ -64,7 +65,7 @@ def switch_date_view(unit_view, naming):
         elif units[0][-2] != "1" and len(units) < 6:
             date_view_dict[date] = ["N/A"] * (6 - len(units)) + units
     # print(date_view_dict)
-    filename = f"date_view_{naming[0]}{naming[4].lower()}(s)_{naming[2]}_{naming[3]}_{naming[1]}"
+    filename = f"date_view_{naming[0]}{naming[4].lower()}_{naming[2]}_{naming[3]}_{naming[1]}"
     cols = [
         "Date",
         "Review 1 (three times)",
@@ -90,11 +91,17 @@ def switch_date_view(unit_view, naming):
 
 
 def main():
+    parser = argparse.ArgumentParser(description="Vocab scheduler parser.")
+    parser.add_argument("--units", default=None, type=int, required=True)
+    parser.add_argument("--year", default=None, type=int, required=True)
+    parser.add_argument("--month", default=None, type=int, required=True)
+    parser.add_argument("--date", default=None, type=int, required=True)
+    parser.add_argument("--name", default=None, type=str, required=True)
+    args = parser.parse_args()
     # Prompts
-    num_units = int(sys.argv[1])
-    start_date = datetime(int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4]))
-    naming = [sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5]]
-
+    num_units = args.units
+    start_date = datetime(args.year, args.month, args.date)
+    naming = [args.units, args.year, args.month, args.date, args.name]
     # Make a dictionary of unit:dates pair
     unit_view = make_unit_view(num_units, start_date)
     # Make a dictionary of date:units pair
