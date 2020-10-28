@@ -1,5 +1,6 @@
 {
     "cSpell.ignoreWords": [
         "strftime"
-    ]
+    ],
+    "python.pythonPath": "/Users/chrisliu298/opt/anaconda3/bin/python"
 }

@@ -1,8 +1,9 @@
-import sys
 import argparse
 import os
-import pandas as pd
+import sys
 from datetime import datetime, timedelta
+
+import pandas as pd
 
 # 8 memory cycles (with the first three in the same day)
 mem_cyc = [0, 1, 2, 4, 7, 15]
